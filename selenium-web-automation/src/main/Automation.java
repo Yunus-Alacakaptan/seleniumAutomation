@@ -8,5 +8,7 @@ public class Automation {
 	//Assign Firefox Driver as "driver" named variable
 	WebDriver driver = new FirefoxDriver();
 	
+	//Navigate to "gittigidiyor.com"
+	driver.get("https://www.gittigidiyor.com");
 	}
 }
