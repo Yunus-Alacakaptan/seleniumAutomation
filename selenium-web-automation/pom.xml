@@ -26,6 +26,18 @@
     <artifactId>log4j-core</artifactId>
     <version>2.14.0</version>
   </dependency>
-
     </dependencies>
+    <build>
+   <plugins>
+      	<plugin>
+  	<groupId>org.apache.Maven.plugins</groupId>
+  	<artifactId>Maven-compiler-plugin</artifactId>
+  	<configuration>
+    	<compilerVersion>1.5</compilerVersion>
+    	<source>1.5</source>
+    	<target>1.5</target>
+  	</configuration>
+	</plugin>
+	</plugins>
+  </build>
 </project>
