@@ -65,5 +65,13 @@ public class Basket {
 		   	String actualAmount                 = confirmAmount.getAttribute("value");
 	        String expectedAmount            	= "2";
 	        Assert.assertEquals (actualAmount, expectedAmount);
+	        
+	        //Delete the added item
+	        WebElement deleteItem 			= driver.findElement(By.xpath("//*[contains (@class, 'btn-delete')]"));
+	        deleteItem.click();
+	        
+	        //Confirm item deletion
+	        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("empty-cart-container")));
 	 }
+	 
 }
