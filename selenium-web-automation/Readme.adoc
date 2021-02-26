@@ -1,1 +1,1 @@
-SeleniumAutomation
+# **IMPORTANT:** You have to replace the lines "%YOUR_EMAIL%" and "%YOUR_PASSWORD%" with your own values, otherwise the script won't work.
