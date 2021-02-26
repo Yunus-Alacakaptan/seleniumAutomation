@@ -45,5 +45,6 @@ public class TestRunner {
 		//Perform a search and confirm it's correct
 		basket.testBasket();
 		
+		driver.quit();
 	}
 }
