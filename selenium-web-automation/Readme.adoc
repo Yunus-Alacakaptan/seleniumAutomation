@@ -15,7 +15,7 @@ This is a basic Automation project using Selenium, Maven, Java, Junit & Log4j wi
 
 Every single line of code is commented. The project flows as follows =
 
-1. Initiate WebDriver and start the tests sequentially(TestRunner.java)
+1. Initiate WebDriver and start the tests sequentially (TestRunner.java)
 2. Navigate to "gittigidiyor.com" and confirm destination (Homepage.java)
 3. Login to the site and confirm login (Login.java)
 4. Input "Bilgisayar" to search box, submit, go to the 2nd page, click on a random item, add it to the basket (Search.java)
