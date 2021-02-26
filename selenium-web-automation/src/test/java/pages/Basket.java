@@ -54,5 +54,16 @@ public class Basket {
 		   //Set the quantity to 2
 		   WebElement selectNumber 			= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/form/div/div[2]/div[2]/div[1]/div[2]/div[6]/div[2]/div[2]/div[4]/div/div[2]/select/option[2]"));
 		   selectNumber.click();
+		   
+		   //Wait either until the value is updated, or until timeout
+		   wait.until(ExpectedConditions.attributeContains(By.xpath("/html/body/div[1]/div[2]/div/div[1]/form/div/div[2]/div[2]/div[1]/div[2]/div[6]/div[2]/div[2]/div[4]/div/div[2]/select"), "value", "2"));
+		   
+		   //Get the value of current selection
+		   WebElement confirmAmount 			= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/form/div/div[2]/div[2]/div[1]/div[2]/div[6]/div[2]/div[2]/div[4]/div/div[2]/select"));
+		   
+		   //Confirm current amount
+		   	String actualAmount                 = confirmAmount.getAttribute("value");
+	        String expectedAmount            	= "2";
+	        Assert.assertEquals (actualAmount, expectedAmount);
 	 }
 }
