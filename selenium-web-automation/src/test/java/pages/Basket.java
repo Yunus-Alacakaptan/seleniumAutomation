@@ -19,26 +19,9 @@ public class Basket {
 	 }
 	 public void testBasket() {
 		 
-		 //List all elements that contain the id "product_id"
-		 List<WebElement> shoppingItems= driver.findElements(By.xpath("//*[contains (@id, 'product_id')]"));
-		 
-		 
-		 //Generate a random number
-		 Random rand = new Random();
-		 
-		 //Assign randomItem to a random integer, limited by the list size of shoppingItems
-		 int randomItem = rand.nextInt(shoppingItems.size());
-		 
-		 //Click on a random item
-		 shoppingItems.get(randomItem).click();
 		 
 		 //Get the actual price of the item in the item listing
-		 String actualPrice = driver.findElement(By.xpath("//*[contains (@id, 'sp-price')]")).getText();
-		 
-		 //Add the item to the basket
-		 WebElement addToBasket 			= driver.findElement(By.id("sp-addbasket-button"));
-		 addToBasket.click();
-		 
+		 String actualPrice = driver.findElement(By.xpath("//*[contains (@id, 'sp-price-discountPrice')]")).getText();
 		 
 		 //action variable for mouse operations
 		   Actions action = new Actions(driver);
@@ -58,7 +41,7 @@ public class Basket {
 		   goToBasket.click();
 		   
 		   //Retrieve the basket price of the item
-		   String basketPrice = driver.findElement(By.xpath("//*[contains (@class, 'real-discounted-price')]")).getText();
+		   String basketPrice = driver.findElement(By.xpath("//*[contains (@class, 'new-price')]")).getText();
 		   
 		   //Compare the listing price and basket price of the item
 		   Assert.assertEquals (actualPrice, basketPrice);
