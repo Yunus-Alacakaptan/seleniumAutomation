@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,11 +30,30 @@ public class Login {
 	   //Set a timeout for 10 seconds
 	   WebDriverWait wait = new WebDriverWait(driver, 10);
 	   
-	   //Wait until "Giriþ Yap" button is visible, or until timeout
+	   //Wait either until "Giriþ Yap" button is visible, or until timeout
 	   wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".sc-12t95ss-3")));
 	   
 	   //Identify the "Giriþ Yap" button and click on it
 	   WebElement dropDownLogin 	= driver.findElement(By.cssSelector(".sc-12t95ss-3"));
 	   dropDownLogin.click();
+	   
+	   //Identify username, password and loginForm
+	   WebElement username 				= driver.findElement(By.name("kullanici"));
+	   WebElement password 				= driver.findElement(By.name("sifre"));
+	   WebElement loginForm 			= driver.findElement(By.id("gg-login-enter"));
+	   
+	   
+	   //Enter username and password
+	   username.sendKeys("%YOUR_EMAIL%");
+	   password.sendKeys("%YOUR_PASSWORD%");
+	   
+	   //Submit the login form
+	   loginForm.submit();
+	   
+	 //Get homepage title and confirm if login was successful
+	    String message                 = driver.getTitle();
+	    String successMsg             = "GittiGidiyor - Türkiye'nin Öncü Alýþveriþ Sitesi";
+	    Assert.assertEquals (message, successMsg);
+	    
 	}
 }

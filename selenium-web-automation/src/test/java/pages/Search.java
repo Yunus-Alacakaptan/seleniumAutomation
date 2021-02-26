@@ -3,13 +3,10 @@ package pages;
 import java.util.List;
 import java.util.Random;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Search {
 	WebDriver driver;
@@ -51,23 +48,22 @@ public class Search {
 		   WebElement pageList = driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[2]/div[5]/ul/li[2]/a"));
 		   pageList.click();
 		   
-		 //List all elements that contain the id "product_id"
-			 List<WebElement> shoppingItems= driver.findElements(By.xpath("//*[contains (@id, 'product_id')]"));
+		   //List all elements that contain the id "product_id"
+		   List<WebElement> shoppingItems= driver.findElements(By.xpath("//*[contains (@id, 'product_id')]"));
 			 
 			 
-			 //Generate a random number
-			 Random rand = new Random();
+		   //Generate a random number
+		   Random rand = new Random();
 			 
-			 //Assign randomItem to a random integer, limited by the list size of shoppingItems
-			 int randomItem = rand.nextInt(shoppingItems.size());
+		   //Assign randomItem to a random integer, limited by the list size of shoppingItems
+		   int randomItem = rand.nextInt(shoppingItems.size());
 			 
-			 //Click on a random item
-			 shoppingItems.get(randomItem).click();
+		   //Click on a random item
+		   shoppingItems.get(randomItem).click();
 			 
-		
 			 
-			 //Add the item to the basket
-			 WebElement addToBasket 			= driver.findElement(By.id("sp-addbasket-button"));
-			 addToBasket.click();
+		   //Add the item to the basket
+		   WebElement addToBasket 			= driver.findElement(By.id("sp-addbasket-button"));
+		   addToBasket.click();
 		}
 }

@@ -3,9 +3,6 @@ package testing;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-
 
 import pages.Homepage;
 import pages.Login;
@@ -13,6 +10,8 @@ import pages.Search;
 import pages.Basket;
 public class TestRunner {
 	public static void main(String[] args) { 
+		
+	
 		// Create an instance of the driver
 		System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
