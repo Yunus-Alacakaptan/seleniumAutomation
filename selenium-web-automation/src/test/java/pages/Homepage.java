@@ -1,22 +1,19 @@
 package pages;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
- 
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
  
 import org.junit.Assert;
-import junit.framework.TestCase;
 
-public class Homepage {
+
+public class Homepage  {
+	
+	WebDriver driver;
+	 //Constructor that will be automatically called as soon as the object of the class is created
+	 public Homepage(WebDriver driver) {
+	 this.driver=driver;
+	 }
+	 
 	public void testHomepage() {
-	// Create an instance of the driver
-	System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
-	WebDriver driver = new ChromeDriver();
-    
+
     // Navigate to a web page
     driver.get("https://gittigidiyor.com");
     
