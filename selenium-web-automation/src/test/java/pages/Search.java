@@ -32,7 +32,7 @@ public class Search {
 		   //action variable for mouse operations
 		   Actions action = new Actions(driver);
 		   
-		   //Move the mouse to dropDown
+		   //Move the mouse to the bottom of the page
 		   action.moveToElement(driver.findElement(By.className("pager"))).perform();
 		   
 		   //To reach the 2nd page button, you have to close the cookie alert, which is blocked by an ad alert.
