@@ -3,6 +3,7 @@ package pages;
 import java.util.List;
 import java.util.Random;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -55,5 +56,11 @@ public class Basket {
 		   //Locate and click on "Sepete Git" button
 		   WebElement goToBasket 			= driver.findElement(By.xpath("//*[contains (@class, 'header-cart-hidden-link')]"));
 		   goToBasket.click();
+		   
+		   //Retrieve the basket price of the item
+		   String basketPrice = driver.findElement(By.xpath("//*[contains (@class, 'real-discounted-price')]")).getText();
+		   
+		   //Compare the listing price and basket price of the item
+		   Assert.assertEquals (actualPrice, basketPrice);
 	 }
 }
